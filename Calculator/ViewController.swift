@@ -98,14 +98,7 @@ class ViewController: UIViewController{
                         }
                       else if Operation == 17
                        {
-                           if String(PreviouseNumber) != ""
-                       {
-                           displayScreen.text = String(PreviouseNumber) +  "." +  String(numberOnScreen)
-                        }
-                            else if String(PreviouseNumber) != ""{
-                        
-                                displayScreen.text =  "." + String(numberOnScreen)
-                            }
+                        displayScreen.text = String(PreviouseNumber + numberOnScreen/10 )
                         }
                         else if Operation == 18
                         {
