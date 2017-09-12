@@ -51,7 +51,6 @@ class ViewController: UIViewController{
             displayScreen.text = "/";
             }
         
-            
             else if sender.tag == 13 // Multiply
             {
                displayScreen.text = "x";
@@ -66,6 +65,15 @@ class ViewController: UIViewController{
             {
                 displayScreen.text = "+";
             }
+            else if sender.tag == 17 // decimal
+            {
+                displayScreen.text = ".";
+                    }
+            else if sender.tag == 18 //change sign
+            {
+                displayScreen.text = "-";
+                    }
+
                     Operation = sender.tag;
                     PerformingMath = true;
                     
@@ -88,7 +96,29 @@ class ViewController: UIViewController{
                         {
                            displayScreen.text = String(PreviouseNumber + numberOnScreen)
                         }
+                        else if Operation == 17
+                        {
+                            if String(PreviouseNumber) != ""
+                        {
+                            displayScreen.text =  "." + String(numberOnScreen) + String(PreviouseNumber)
+                        }
+                            else{
+                                displayScreen.text = String(PreviouseNumber) + "." + String(numberOnScreen)
+                            }
+                        }
+                        else if Operation == 18
+                        {
+                        if String(PreviouseNumber) != ""
+                        {
+                            displayScreen.text = "-" + String(PreviouseNumber) + String(PreviouseNumber)
+                        }
+                        else
+                        {
+                            displayScreen.text = "-" + String(numberOnScreen) + String(PreviouseNumber)
+                        
+        }
                     }
+        }
                 else if sender.tag == 11 // reset everything
                     {
                         displayScreen.text = ""
