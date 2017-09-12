@@ -73,6 +73,10 @@ class ViewController: UIViewController{
             {
                 displayScreen.text = "-";
                     }
+            else if sender.tag == 19 //Percntage sign
+            {
+                displayScreen.text = "%";
+                    }
 
                     Operation = sender.tag;
                     PerformingMath = true;
@@ -105,6 +109,12 @@ class ViewController: UIViewController{
                        
                             displayScreen.text =  String(-1 * PreviouseNumber)
                         }
+                        else if Operation == 19
+                        {
+                            
+                            displayScreen.text =  String( PreviouseNumber/100)
+                        }
+
                     }
                 else if sender.tag == 11 // reset everything
                     {
