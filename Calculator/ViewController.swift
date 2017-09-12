@@ -44,7 +44,7 @@ class ViewController: UIViewController{
         if displayScreen.text != "" && sender.tag != 11 && sender.tag != 16
                 {
             
-                    PreviouseNumber = Double(displayScreen.text!)!
+        PreviouseNumber = Double(displayScreen.text!)!
 
             if sender.tag == 12 // Devide
             {
@@ -96,29 +96,23 @@ class ViewController: UIViewController{
                         {
                            displayScreen.text = String(PreviouseNumber + numberOnScreen)
                         }
-                        else if Operation == 17
-                        {
-                            if String(PreviouseNumber) != ""
-                        {
-                            displayScreen.text =  "." + String(numberOnScreen) + String(PreviouseNumber)
+                      else if Operation == 17
+                       {
+                           if String(PreviouseNumber) != ""
+                       {
+                           displayScreen.text = String(PreviouseNumber) +  "." +  String(numberOnScreen)
                         }
-                            else{
-                                displayScreen.text = String(PreviouseNumber) + "." + String(numberOnScreen)
+                            else if String(PreviouseNumber) != ""{
+                        
+                                displayScreen.text =  "." + String(numberOnScreen)
                             }
                         }
                         else if Operation == 18
                         {
-                        if String(PreviouseNumber) != ""
-                        {
-                            displayScreen.text = "-" + String(PreviouseNumber) + String(PreviouseNumber)
+                       
+                            displayScreen.text =  String(-1 * PreviouseNumber)
                         }
-                        else
-                        {
-                            displayScreen.text = "-" + String(numberOnScreen) + String(PreviouseNumber)
-                        
-        }
                     }
-        }
                 else if sender.tag == 11 // reset everything
                     {
                         displayScreen.text = ""
